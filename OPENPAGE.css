@@ -1,0 +1,28 @@
+.tshirts-icon {
+  position: absolute;
+  top: calc(50% - 466px);
+  left: calc(50% - 215px);
+  width: 430px;
+  height: 932px;
+  object-fit: cover;
+}
+.buy-soon {
+  position: absolute;
+  top: calc(50% - 10px);
+  left: calc(50% - 100px);
+  letter-spacing: 1px;
+  line-height: 19.2px;
+  text-transform: uppercase;
+}
+.openpage {
+  position: relative;
+  background-color: var(--color-orange);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  height: 932px;
+  overflow: hidden;
+  text-align: center;
+  font-size: 40px;
+  color: var(--color-saddlebrown);
+  font-family: var(--font-courier-new);
+}

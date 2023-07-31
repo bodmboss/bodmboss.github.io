@@ -1,0 +1,24 @@
+body {
+  margin: 0;
+  line-height: normal;
+}
+
+:root {
+  /* fonts */
+  --font-courier-new: "Courier New";
+
+  /* font sizes */
+  --font-size-5xl: 24px;
+
+  /* Colors */
+  --color-orange: #ffab00;
+  --color-saddlebrown: #471100;
+
+  /* Paddings */
+  --padding-sm-4: 13.4px;
+  --padding-base-1: 15.1px;
+  --padding-mini-6: 14.6px;
+  --padding-mini: 15px;
+  --padding-base-5: 15.5px;
+  --padding-5xs: 8px;
+}

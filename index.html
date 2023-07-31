@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>BODMFYALL</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="public/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="public/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="public/favicon-16x16.png">
+  <link rel="manifest" href="public/site.webmanifest">
+  <link rel="mask-icon" href="public/safari-pinned-tab.svg" color="#ffab00">
+  <meta name="msapplication-TileColor" content="#ffab00">
+  <meta name="theme-color" content="#ffab00">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script>
+$(document).ready(function() {
+  $('#email-form').submit(function(event) {
+    event.preventDefault(); // Отменяем стандартное поведение формы
+    var form_data = $(this).serialize(); // Сериализуем данные формы
+    $.ajax({
+      type: 'POST',
+      url: 'process_email.php',
+      data: form_data,
+      dataType: 'json',
+      success: function(response) {
+        $('#email-message').html('<p>SAVED!</p>'); // Выводим сообщение об успешном сохранении email
+        $('#email-form')[0].reset(); // Очищаем форму после успешной отправки
+      },
+      error: function() {
+        $('#email-message').html('<p>ERROR!</p>'); // Выводим сообщение об ошибке сохранения email
+      }
+    });
+  });
+});
+</script>
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="initial-scale=1, width=device-width" />
+  <link rel="stylesheet" href="./global.css" />
+  <link rel="stylesheet" href="./index.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Courier New:wght@400&display=swap" />
+</head>
+
+<body>
+  <main class="main">
+    <div class="logosection">
+      <img class="x111-1-icon" alt="" src="./public/1-1@2x111.gif" />
+    </div>
+    
+  <div class="email">
+  <form id="email-form" method="post">
+    <input class="input1" type="email" name="email" placeholder="EMAIL" maxlength="{50}" minlength="{5}" required />
+    <button class="submit2" type="submit">
+      <div class="submit3">Submit</div>
+    </button>
+  </form>
+  <div id="email-message"></div>
+</div>
+
+    
+    
+    <div class="linkz">
+      <a class="instagram" href="https://instagram.com/bodm.rly?igshid=YmMyMTA2M2Y=" target="_blank">
+        <span class="instagram1">instagram</span>
+      </a>
+      **
+      <a class="instagram" href="https://t.me/bodmfyall" target="_blank">
+        <span class="instagram1">telegram</span>
+      </a>
+    </div>
+    
+    <a class="passwordpage" href="./Password.html">
+      <div class="password1" id="pASSWORD">PASSWORD</div>
+      <img class="profile-user-svgrepo-com-1-icon" alt="" src="./public/profileusersvgrepocom-1.svg" />
+    </a>
+  </main>
+
+  <script>
+    var pASSWORD = document.getElementById("pASSWORD");
+    if (pASSWORD) {
+      pASSWORD.addEventListener("click", function (e) {
+        window.location.href = "./Password.html";
+      });
+    }
+  </script>
+</body>
+
+</html>
